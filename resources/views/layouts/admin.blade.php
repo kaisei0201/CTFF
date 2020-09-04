@@ -124,22 +124,22 @@
                     <div class="row pb-3">
                         <div class="col-md-12">
                             <div class="mb-5 flex-center">
-                                <a class="fb-ic">
-                                    <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f fa-lg white-text mr-4"></i>
                                 </a>
-                                <a class="tw-ic">
-                                    <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+                                <a href="#">
+                                    <i class="fab fa-twitter fa-lg white-text mr-4"></i>
                                 </a>
-                                <a class="gplus-ic">
-                                    <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g fa-lg white-text mr-4"></i>
                                 </a>
-                                <a class="li-ic">
-                                    <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in fa-lg white-text mr-4"></i>
                                 </a>
-                                <a class="ins-ic">
-                                    <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+                                <a href="#">
+                                    <i class="fab fa-instagram fa-lg white-text mr-4"></i>
                                 </a>
-                                <a class="pin-ic">
+                                <a href="#">
                                     <i class="fab fa-pinterest fa-lg white-text"> </i>
                                 </a>
                             </div>
