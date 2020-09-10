@@ -25,4 +25,14 @@ class UserController extends Controller
     {
         return redirect('users/edit');
     }
+
+    public function info()
+    {
+        return view('info');
+    }
+
+    public function search()
+    {
+        return view('info');
+    }
 }

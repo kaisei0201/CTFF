@@ -12,14 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group([], function() {
+Route::group(['middleware' => 'auth'], function() {
     // Admin用ルーティング
     Route::get('admin/create', 'AdminController@add');
     Route::get('admin/edit', 'AdminController@edit');
@@ -35,7 +35,8 @@ Route::group([], function() {
     Route::get('users/edit', 'UserController@edit');
     Route::get('users/delete', 'UserController@delete');
     Route::get('users/update', 'UserController@update');
-    // トップ画面用ルーティング
     // お問い合わせ用ルーティング
+    Route::get('info', 'UserController@info');
     // 検索画面用ルーティング
+    Route::get('search', 'UserController@search');
 });
