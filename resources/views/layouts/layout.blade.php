@@ -78,7 +78,7 @@
                 </div>
             </nav>
             {{-- content --}}
-            <main class="py-2">
+            <main>
                 @yield('content')
             </main>
             {{-- footer --}}

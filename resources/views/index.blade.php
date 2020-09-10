@@ -5,28 +5,28 @@
 {{-- <div class="container"> --}}
     <div class="top">
         <div class="row">
-            <div class="col-md-8">
-                <br><br>
-                <h1 class="display-4">Create Team for フットサル</h1>
-                <br><br>
-                <h4 class="offset-1 lead">東京23区限定</h4>
-                <br><br>
-                <h4 class="offset-2 lead">フットサルチーム作成したい！</h4>
-                <br><br>
-                <h4 class="offset-3 lead">フットサルチーム参加したい！</h4>
-                <br><br>
-                <h4 class="offset-4 lead">そんな方のためのサイトです。</h4>
+            <div class="col-md-8 mb-5 mt-5">
+                
+                <h1 class="display-4 offset-1">Create Team for フットサル</h1>
+                
+                <h4 class="offset-1 lead mt-3 mb-3">東京23区限定</h4>
+                
+                <h4 class="offset-2 lead mt-3 mb-3">フットサルチーム作成したい！</h4>
+                
+                <h4 class="offset-3 lead mt-3 mb-3">フットサルチーム参加したい！</h4>
+                
+                <h4 class="offset-4 lead mt-3 mb-3">そんな方のためのサイトです。</h4>
             </div>
-            <div class="col-md-4 mb-5">
-                <br><br><br>
-                <h4>チームを作りたい方はこちら</h4>
-                <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false"
+            <div class="col-md-4 mb-5 mt-5">
+                {{-- <br><br><br> --}}
+                <h4 >チームを作りたい方はこちら</h4>
+                <button type="button" class="btn btn-success mb-5 mt-2" data-toggle="button" aria-pressed="false"
                     autocomplete="off">
                     チームを作成する
                 </button>
-                <br><br>
+                
                 <h4>チームに参加したい方はこちら</h4>
-                <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false"
+                <button type="button" class="btn btn-success mb-2 mt-2" data-toggle="button" aria-pressed="false"
                     autocomplete="off">
                     チームを検索する
                 </button>
