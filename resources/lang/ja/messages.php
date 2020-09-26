@@ -11,5 +11,4 @@ return [
     'Name' => '名前',
     'Confirm Password' => '再度パスワードを入力',
     'Reset Password' => 'パスワード再登録'
-    
 ];

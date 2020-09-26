@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/update', 'AdminController@update');
     // Teams用ルーティング
     Route::get('team/create', 'TeamController@add');
+    Route::post('team/create', 'TeamController@create');
     Route::get('team/edit', 'TeamController@edit');
     Route::get('team/delete', 'TeamController@delete');
     Route::get('team/update', 'TeamController@update');
@@ -35,5 +36,5 @@ Route::group(['middleware' => 'auth'], function() {
     // お問い合わせ用ルーティング
     Route::get('info', 'UserController@info');
     // 検索画面用ルーティング
-    Route::get('search', 'UserController@search');
+    Route::get('search', 'SearchController@search');
 });

@@ -43,3 +43,16 @@ footer.page-footer .footer-copyright {
     border-radius: 0.3rem;
     color: #FFFFFF;
 }
+
+.search-bar {
+    background-color: beige!important;
+}
+
+.item_team .item_team_info {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}

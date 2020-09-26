@@ -54,7 +54,7 @@
                             <!--end of col-->
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless" type="search"
-                                    placeholder="Search topics or keywords">
+                                    placeholder="キーワードを入力してください">
                             </div>
                             <!--end of col-->
                             <div class="col-auto">
@@ -132,13 +132,8 @@
         @foreach($teams as $team)
         <div class="col-md-3">
             <div class="card-deck">
-                <div class="card">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
-                        xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                        role="img" aria-label="Placeholder: Image cap">
-                        <title></title>
-                        <rect fill="#868e96" width="100%" height="100%" /><text class="center"></text>
-                    </svg>
+                <div class="card mb-3 mt-3">
+                    
                     <div class="card-body">
                         <dl>
                             <dt>チーム名</dt>

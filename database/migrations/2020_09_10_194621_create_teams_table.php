@@ -22,6 +22,11 @@ class CreateTeamsTable extends Migration
             $table->string('create_time'); // 結成時期
             $table->string('age_group'); // 年齢層
             $table->string('introduction'); // チーム紹介
+            $table->string('representative'); //代表者
+            $table->string('category'); //カテゴリー
+            $table->string('member_count'); //メンバー人数
+            $table->string('area'); //活動エリア
+            $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
     }

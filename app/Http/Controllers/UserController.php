@@ -30,9 +30,4 @@ class UserController extends Controller
     {
         return view('info');
     }
-
-    public function search()
-    {
-        return view('info');
-    }
 }
