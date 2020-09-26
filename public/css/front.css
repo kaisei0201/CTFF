@@ -36,14 +36,42 @@ footer.page-footer .footer-copyright {
     height: 100%;
 }
 
+/* 雰囲気エンジョイ度 */
+.level-enjoy {
+    display: inline-block;
+    width: auto;
+    height: 14px;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+/* 雰囲気ガチ度 */
+.level-sanity {
+    display: inline-block;
+    width: auto;
+    height: 14px;
+    margin-left: 53px;
+    margin-top: -1px;
+}
+
+/* TOPページCardリンクホバーイベント */
+.card-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* TOPページメイン画像 */
 .top {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background-image: url("../images/sample3.png");
+    background-size: cover;
+    background-position:center;
     border-radius: 0.3rem;
     color: #FFFFFF;
 }
 
+<<<<<<< Updated upstream
 .search-bar {
     background-color: beige!important;
 }
@@ -56,3 +84,181 @@ footer.page-footer .footer-copyright {
     flex-wrap: wrap;
     flex-grow: 1;
 }
+=======
+/***** 地図用スタイル *****/
+ul {
+    list-style: none;
+}
+
+.map li {
+    position: absolute;
+    padding: 5px 0;
+}
+
+.map-color {
+    fill: #D1D1D1;
+}
+
+.active {
+    fill: #00BFFF;
+}
+
+/***** MAP1列目 *****/
+
+/* 板橋区 */
+.itabashiKu {
+    right: 350px;
+    top: 70px;
+    padding: 0;
+}
+/* 北区 */
+.kitaKu {
+    right: 245px;
+    top: 70px;
+    padding: 0;
+}
+/* 足立区 */
+.adachiKu {
+    right: 140px;
+    top: 70px;
+    padding: 0;
+}
+
+/***** MAP2列目 *****/
+
+/* 練馬区 */
+.nerimaKu {
+    right: 350px;
+    top: 120px;
+    padding: 0;
+}
+/* 豊島区 */
+.toshimaKu {
+    right: 245px;
+    top: 120px;
+    padding: 0;
+}
+/* 荒川区 */
+.arakawaKu {
+    right: 140px;
+    top: 120px;
+    padding: 0;
+}
+/* 葛飾区 */
+.katsushikaKu {
+    right: 35px;
+    top: 120px;
+    padding: 0;
+}
+
+/***** MAP3列目 *****/
+
+/* 中野区 */
+.nakanoKu {
+    right: 350px;
+    top: 170px;
+    padding: 0;
+}
+/* 文京区 */
+.bunkyoKu {
+    right: 245px;
+    top: 170px;
+    padding: 0;
+}
+/* 台東区 */
+.taitoKu {
+    right: 140px;
+    top: 170px;
+    padding: 0;
+}
+/* 墨田区 */
+.sumidaKu {
+    right: 35px;
+    top: 170px;
+    padding: 0;
+}
+
+/***** MAP4列目 *****/
+
+/* 千代田区 */
+.chiyodaKu {
+    right: 140px;
+    top: 220px;
+    padding: 0;
+}
+/* 杉並区 */
+.suginamiKu {
+    right: 350px;
+    top: 220px;
+    padding: 0;
+}
+/* 新宿区 */
+.shinjukuKu {
+    right: 245px;
+    top: 220px;
+    padding: 0;
+}
+/* 江戸川区 */
+.edogawaKu {
+    right: 35px;
+    top: 220px;
+    padding: 0;
+}
+
+/***** MAP5列目 *****/
+
+/* 世田谷区 */
+.setagayaKu {
+    right: 350px;
+    top: 270px;
+    padding: 0;
+}
+/* 渋谷区 */
+.shibuyaKu {
+    right: 245px;
+    top: 270px;
+    padding: 0;
+}
+/* 港区 */
+.minatoKu {
+    right: 140px;
+    top: 270px;
+    padding: 0;
+}
+/* 中央区 */
+.chuoKu {
+    right: 35px;
+    top: 270px;
+    padding: 0;
+}
+
+/***** MAP6列目 *****/
+
+/* 目黒区 */
+.meguroKu {
+    right: 310px;
+    top: 320px;
+    padding: 0;
+}
+/* 品川区 */
+.shinagawaKu {
+    right: 200px;
+    top: 320px;
+    padding: 0;
+}
+/* 江東区 */
+.koutouKu {
+    right: 90px;
+    top: 320px;
+    padding: 0;
+}
+
+/***** MAP7列目 *****/
+
+/* 大田区 */
+.otaKu {
+    right: 200px;
+    top: 370px;
+    padding: 0;
+}
+>>>>>>> Stashed changes

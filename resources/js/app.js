@@ -29,4 +29,39 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        adachiKu: 'adachiKu',
+        arakawaKu: 'arakawaKu',
+        itabashiKu: 'itabashiKu',
+        edogawaKu: 'edogawaKu',
+        otaKu: 'otaKu',
+        katsushikaKu: 'katsushikaKu',
+        kitaKu: 'kitaKu',
+        koutouKu: 'koutouKu',
+        shinagawaKu: 'shinagawaKu',
+        shibuyaKu: 'shibuyaKu',
+        shinjukuKu: 'shinjukuKu',
+        suginamiKu: 'suginamiKu',
+        sumidaKu: 'sumidaKu',
+        setagayaKu: 'setagayaKu',
+        taitoKu: 'taitoKu',
+        chiyodaKu: 'chiyodaKu',
+        chuoKu: 'chuoKu',
+        toshimaKu: 'toshimaKu',
+        nakanoKu: 'nakanoKu',
+        nerimaKu: 'nerimaKu',
+        bunkyoKu: 'bunkyoKu',
+        minatoKu: 'minatoKu',
+        meguroKu: 'meguroKu',
+    },
+    methods: {
+        mouseOver(map) {
+            const target = document.getElementById(map);
+            target.classList.add('active');
+        },
+        mouseLeave(map) {
+            const target = document.getElementById(map);
+            target.classList.remove('active');
+        }
+    }
 });
