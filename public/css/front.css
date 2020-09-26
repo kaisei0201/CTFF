@@ -71,7 +71,6 @@ footer.page-footer .footer-copyright {
     color: #FFFFFF;
 }
 
-<<<<<<< Updated upstream
 .search-bar {
     background-color: beige!important;
 }
@@ -84,7 +83,7 @@ footer.page-footer .footer-copyright {
     flex-wrap: wrap;
     flex-grow: 1;
 }
-=======
+
 /***** 地図用スタイル *****/
 ul {
     list-style: none;
@@ -261,4 +260,3 @@ ul {
     top: 370px;
     padding: 0;
 }
->>>>>>> Stashed changes

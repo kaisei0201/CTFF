@@ -13,26 +13,27 @@
             <h4 class="offset-1 col-md-12">以下の内容を入力して、「入力内容を確認する」をクリックしてください</h4>
         </div>
         {{-- チーム登録詳細入力 --}}
-        <from>
+        <form action="{{ route('team.confirm') }}" method="post">
+            @csrf
             {{-- チーム名 --}}
             <div class="form-group row">
                 <label for="text3a" class="col-sm-3 col-form-label">チーム名 ※必須</label>
                 <div class="col-sm-4">
-                    <input type="text" id="text3a" class="form-control">
+                    <input type="text" id="text3a" class="form-control" name="name">
                 </div>
             </div>
             {{-- チーム名(フリガナ)--}}
             <div class="form-group row">
                 <label for="text3a" class="col-sm-3 col-form-label">チーム名(フリガナ) ※必須</label>
                 <div class="col-sm-4">
-                    <input type="text" id="text3a" class="form-control">
+                    <input type="text" id="text3a" class="form-control" name="name_kana">
                 </div>
             </div>
             {{-- 活動エリア --}}
             <div class="form-group row">
                 <div class="input-group">
                     <label for="text3a" class="col-sm-3 col-form-label">活動エリアを選択</label>
-                    <select id="select1a" class="form-control">
+                    <select id="select1a" class="form-control" name="area">
                         <option>お選びください</option>
                         <option>中央区</option>
                         <option>千代田区</option>
@@ -65,7 +66,7 @@
                 <label for="text3a" class="col-sm-3 col-form-label">年代 ※必須</label>
                 <div class="col-sm-4">
                     <div class="form-check form-check-inline">
-                        <input type="checkbox" class="form-check-input" value="" id="check1">
+                        <input type="checkbox" class="form-check-input" value="" name="name">
                         <label class="form-check-label" for="check1">10代</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -251,6 +252,9 @@
                     <input type="text" id="text3a" class="form-control">
                 </div>
             </div>
-        </from>
+            <div class="col-auto">
+                <button class="btn btn-lg btn-success" type="submit">入力内容を確認する</button>
+            </div>
+        </form>
     </div>
 @endsection

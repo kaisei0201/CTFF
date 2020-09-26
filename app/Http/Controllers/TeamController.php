@@ -11,6 +11,17 @@ class TeamController extends Controller
         return view('team.create');
     }
 
+    public function confirm(Request $request)
+    {
+        // 確認画面
+        return view('team.confirm', compact('request'));
+    }
+
+    public function complete(Request $request)
+    {
+        return view('team.complete');
+    }
+
     public function create()
     {
         return redirect('team/create');

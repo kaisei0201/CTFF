@@ -17,7 +17,7 @@
                 チームを作成する
             </a>
             <h4>チームに参加したい方はこちら</h4>
-            <a href="#" class="btn btn-success mb-2 mt-2">
+            <a href="{{ route('team.list') }}" class="btn btn-success mb-2 mt-2">
                 チームを検索する
             </a>
         </div>
@@ -86,15 +86,10 @@
         @foreach($teams as $team)
         <div class="col-md-3">
             <div class="card-deck">
-<<<<<<< Updated upstream
-                <div class="card mb-3 mt-3">
-                    
-=======
                 <div class="card card-link mb-3">
                     <a class="stretched-link" href="#">
                         <img class="card-img-top" src="images/noimage.jpg" alt="">
                     </a>
->>>>>>> Stashed changes
                     <div class="card-body">
                         <dl>
                             <dt>チーム名</dt>
