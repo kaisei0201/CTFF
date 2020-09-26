@@ -88,12 +88,12 @@
                     <div class="row text-center d-flex justify-content-center pt-5 mb-3">
                         <div class="col-md-2 mb-3">
                             <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!">オリジナルチームを作成する</a>
+                                <a href="{{ route('team.create') }}">オリジナルチームを作成する</a>
                             </h6>
                         </div>
                         <div class="col-md-2 mb-3">
                             <h6 class="text-uppercase font-weight-bold">
-                                <a href="#!">自分に合ったチームを検索する</a>
+                                <a href="{{ route('team.list') }}">自分に合ったチームを検索する</a>
                             </h6>
                         </div>
                         <div class="col-md-2 mb-3">
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                    <a href="#">Create Team For Futsal</a>
+                    <a href="{{ url('/') }}">Create Team For Futsal</a>
                 </div>
             </footer>
         </div>
