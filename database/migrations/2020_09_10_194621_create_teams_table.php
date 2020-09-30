@@ -15,17 +15,22 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name'); // チーム名
+            $table->string('team_id'); // チームID
+            $table->unsignedInteger('user_id'); // ユーザーID
+            $table->unsignedInteger('name'); // チーム名
             $table->string('name_kana'); // チーム名フリガナ
-            $table->string('mood_enjoy'); // 雰囲気エンジョイ度
-            $table->string('mood_sanity'); // 雰囲気ガチ度
-            $table->string('create_time'); // 結成時期
-            $table->string('age_group'); // 年齢層
-            $table->string('introduction'); // チーム紹介
             $table->string('representative'); //代表者
-            $table->string('category'); //カテゴリー
             $table->string('member_count'); //メンバー人数
             $table->string('area'); //活動エリア
+            $table->string('age_group'); // 年齢層
+            $table->string('category'); //カテゴリー
+            $table->string('mood_enjoy'); // 雰囲気エンジョイ度
+            $table->string('mood_sanity'); // 雰囲気ガチ度
+            $table->string('create_year'); // 結成時期(年)
+            $table->string('create_month'); //結成時期(月)
+            $table->string('tag'); //タグ
+            $table->string('introduction'); // チーム紹介
+            $table->string('url_path'); // チームURL
             $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
