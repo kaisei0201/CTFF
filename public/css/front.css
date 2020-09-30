@@ -260,3 +260,42 @@ ul {
     top: 370px;
     padding: 0;
 }
+
+
+.formbar {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.bodybar {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.flex-center {
+    align-items: center;
+    margin: 100px 300px 100px 300px;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.flex-center {
+    align-items: center;
+    margin: 100px 300px 100px 300px;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
