@@ -3,15 +3,6 @@
 @section('content')
 
 <h1>確認画面</h1>
-@if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 
 <form action="{{ route('team.complete') }}" method="post">
     @csrf
@@ -49,7 +40,7 @@
 
         <h4>{{ $introduction }}</h4>
 
-        <h4>{{ $image_path }}</h4>
+        <h4>{{ $image }}</h4>
 
         <h4>{{ $url_path }}</h4>
 

@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-4 mb-5 mt-5">
             <h4 >チームを作りたい方はこちら</h4>
-            <a href="#" class="btn btn-success mb-5 mt-2">
+            <a href="{{ route('team.create') }}" class="btn btn-success mb-5 mt-2">
                 チームを作成する
             </a>
             <h4>チームに参加したい方はこちら</h4>

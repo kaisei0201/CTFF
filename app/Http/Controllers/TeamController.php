@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Team;
 
 class TeamController extends Controller
 {
@@ -11,7 +12,8 @@ class TeamController extends Controller
         return view('team.create');
     }
 
-    public function confirm(Request $request) {
+    public function confirm(Request $request) 
+    {
         
         //バリデーション
         $validatedData = $request->validate([
@@ -28,8 +30,7 @@ class TeamController extends Controller
             'create_year' => 'string',
             'create_month' => 'string',
             'introduction' => 'present',
-            'image_path' => 'string',
-            'team_url' => 'string',
+            'image' => 'string',
         ]);
 
         // ビューで使う配列データの作成
@@ -47,12 +48,27 @@ class TeamController extends Controller
 			'create_year' => $request->input('create_year'), // 結成時期（月）
 			'create_month' => $request->input('create_month'), // 結成時期（年）
 			'introduction' => $request->input('introduction'), // チーム紹介
-			'image_path' => $request->input('image_path'), // チーム画像
-			'team_url' => $request->input('url_path'), // チームURL
+			'image' => $request->input('image'), // チーム画像
+            'url_path' => $request->input('url_path'), // チームURL
         );
-		return view('team.confirm', $teams);
-	}
 
+        // // フォームから画像が送信されてきたら、保存して、$teams->image_path に画像のパスを保存する
+        // if (isset($form['image'])) {
+        //     $path = $request->file('image_path')->store('public/images');
+        //     $teams->image_path = basename($path);
+        // } else {
+        //     $teams->image = null;
+        // }
+    
+        // フォームから送信されてきた_tokenを削除する
+        // unset($teams['_token']);
+    
+        // // フォームから送信されてきたimageを削除する
+        // unset($form['image']);
+        
+        return view('team.confirm', $teams);
+    }
+    
     public function complete(Request $request)
     {
         return view('team.complete');
@@ -63,13 +79,39 @@ class TeamController extends Controller
         return redirect('team/create');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('team.edit');
+        // Team Modelからデータを取得する
+        $teams = Team::find($request->id);
+        
+        if (empty($team)) {
+            abort(404);    
+        }
+        
+        return view('team.edit', ['team_form' => $team]);
     }
 
-    public function update()
+    public function update(Request $request)
     {
-        return redirect('team/edit');
+        // Team Modelからデータを取得する
+        $team = Team::find($request->id);
+        
+        // 送信されてきたフォームデータを格納する
+        $team_form = $request->all();
+        // if (isset($news_form['image'])) {
+        //     $path = $request->file('image')->store('public/image');
+        //     $news->image_path = basename($path);
+        //     unset($news_form['image']);
+        // } elseif (isset($request->remove)) {
+        //     $news->image_path = null;
+        //     unset($news_form['remove']);
+        // }
+
+        unset($team_form['_token']);
+
+        // 該当するデータを上書きして保存する
+        $team->fill($team_form)->save();
+        
+        return redirect('team/confirm');
     }
 }

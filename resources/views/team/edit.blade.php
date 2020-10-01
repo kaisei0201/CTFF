@@ -1,11 +1,51 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h2>チーム詳細編集画面</h2>
-            </div>
-        </div>
-    </div>
+
+<h1>確認画面</h1>
+
+<form action="{{ action('TeamController@update') }}" method="post" enctype="multipart/form-data">
+    @csrf
+        <h4>{{ $name }}</h4>
+
+        <h4>{{ $name_kana }}</h4>
+        
+        <h4>{{ $representative }}</h4>
+
+        <h4>{{ $member_count }}</h4>
+
+        <h4>{{ $area }}</h4> 
+
+        <h4>{{ $age_group }}</h4>
+
+        <h4>{{ $category }}</h4>
+
+        <h4>{{ $mood_enjoy }}</h4>
+
+        <h4>{{ $mood_sanity }}</h4>
+
+        <h4>
+            @foreach ($tag as $value)
+                @if (!$loop->last)
+                    {{ $value }},
+                @else
+                    {{ $value }}
+                @endif
+            @endforeach
+        </h4>
+
+        <h4>{{ $create_year }}</h4>
+
+        <h4>{{ $create_month }}</h4>
+
+        <h4>{{ $introduction }}</h4>
+
+        <h4>{{ $image }}</h4>
+
+        <h4>{{ $url_path }}</h4>
+        
+        <input type="hidden" name="id" value="{{ $team_form->id }}">
+        {{ csrf_field() }}
+        <input type="submit" class="btn btn-primary" value="更新">
+</form>
 @endsection

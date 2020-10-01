@@ -15,9 +15,9 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('team_id'); // チームID
+            $table->unsignedInteger('team_id'); // チームID
             $table->unsignedInteger('user_id'); // ユーザーID
-            $table->unsignedInteger('name'); // チーム名
+            $table->string('name'); // チーム名
             $table->string('name_kana'); // チーム名フリガナ
             $table->string('representative'); //代表者
             $table->string('member_count'); //メンバー人数
@@ -31,7 +31,7 @@ class CreateTeamsTable extends Migration
             $table->string('tag'); //タグ
             $table->string('introduction'); // チーム紹介
             $table->string('url_path'); // チームURL
-            $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
+            $table->string('image')->nullable();  // 画像のパスを保存するカラム
             $table->timestamps();
         });
     }
