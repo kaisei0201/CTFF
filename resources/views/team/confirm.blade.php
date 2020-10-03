@@ -6,7 +6,10 @@
 
 <form action="{{ route('team.complete') }}" method="post">
     @csrf
-        <h4>{{ $name }}</h4>
+    @foreach ($teams as $team)
+    <h4>{{ $team }}</h4>
+    @endforeach
+        {{-- <h4>{{ $name }}</h4>
 
         <h4>{{ $name_kana }}</h4>
         
@@ -42,7 +45,7 @@
 
         <h4>{{ $image }}</h4>
 
-        <h4>{{ $url_path }}</h4>
+        <h4>{{ $url_path }}</h4> --}}
 
         <div class="col-auto">
             <button class="btn btn-lg btn-success" type="submit">確定する</button>

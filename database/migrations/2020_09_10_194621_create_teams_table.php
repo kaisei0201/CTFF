@@ -14,9 +14,10 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('team_id'); // チームID
-            $table->unsignedInteger('user_id'); // ユーザーID
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name'); // チーム名
             $table->string('name_kana'); // チーム名フリガナ
             $table->string('representative'); //代表者
@@ -28,7 +29,6 @@ class CreateTeamsTable extends Migration
             $table->string('mood_sanity'); // 雰囲気ガチ度
             $table->string('create_year'); // 結成時期(年)
             $table->string('create_month'); //結成時期(月)
-            $table->string('tag'); //タグ
             $table->string('introduction'); // チーム紹介
             $table->string('url_path'); // チームURL
             $table->string('image')->nullable();  // 画像のパスを保存するカラム
