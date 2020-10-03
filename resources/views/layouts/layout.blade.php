@@ -38,10 +38,10 @@
                         <ul class="navbar-nav ml-auto">
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">チーム検索・一覧</a>
+                                    <a class="nav-link" href="{{ route('team.list') }}">チーム検索・一覧</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">チーム作成</a>
+                                    <a class="nav-link" href="{{ route('team.create') }}">チーム作成</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

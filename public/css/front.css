@@ -64,11 +64,16 @@ footer.page-footer .footer-copyright {
 .top {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background-image: url("../images/sample3.png");
+    background-image: url("../storage/images/sample3.png");
     background-size: cover;
     background-position:center;
     border-radius: 0.3rem;
     color: #FFFFFF;
+}
+/* ページャー */
+.pagination {
+    margin: 10px;
+    justify-content: center;
 }
 
 .search-bar {

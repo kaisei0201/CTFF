@@ -38,11 +38,11 @@
                 <div class="card-body">
                     {{-- キーワード検索 --}}
                     <h5 class="card-title"><i class="fas fa-search mr-2"></i>キーワードから探す</h5>
-                    <form action="#" method="get">
+                    <form action="{{ route('team.search') }}" method="get">
                         <div class="form-row align-items-center">
                             <div class="col">
                                 <input class="form-control form-control-lg form-control-borderless"
-                                    type="search" placeholder="キーワードを入力してください">
+                                    name="keyword" type="search" placeholder="キーワードを入力してください">
                             </div>
                             <div class="col-auto">
                                 <button class="btn btn-lg btn-success" type="submit">検索</button>
@@ -53,7 +53,10 @@
                     <h5 class="card-title mt-4"><i class="fas fa-folder-open mr-2"></i>カテゴリーから探す</h5>
                     <div>
                         @foreach($category_list as $category)
-                            <a href="#" class="btn btn-light btn-outline-secondary ml-2 mt-2" style="width:150px">{{ $category }}</a>
+                            <a class="btn btn-light btn-outline-secondary ml-2 mt-2" style="width:150px"
+                                href="{{ action('SearchController@search', ['keyword' => $category]) }}">
+                                {{ $category }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
@@ -68,7 +71,11 @@
                     <ul class="map">
                         @foreach($tokyo23 as $key => $value)
                         <li class="{{ $key }}" v-on:mouseover="mouseOver({{ $key }})" v-on:mouseleave="mouseLeave({{ $key }})">
-                            <a class="btn btn-light btn-outline-dark" href="#" style="width:100px">{{ $value }}</a>
+                            <a class="btn btn-light btn-outline-dark"
+                                href="{{ action('SearchController@search', ['keyword' => $value]) }}"
+                                style="width:100px">
+                                {{ $value }}
+                            </a>
                         </li>
                         @endforeach
                     </ul>
@@ -88,7 +95,7 @@
             <div class="card-deck">
                 <div class="card card-link mb-3">
                     <a class="stretched-link" href="#">
-                        <img class="card-img-top" src="images/noimage.jpg" alt="">
+                        <img class="card-img-top" src="storage/images/noimage.jpg" alt="">
                     </a>
                     <div class="card-body">
                         <dl>
@@ -99,18 +106,18 @@
                             <dt>雰囲気</dt>
                             <dd>
                                 <p>エンジョイ度
-                                    @if($team->mood_enjoy == 1)<span><img class="level-enjoy" src="images/level/lv1.svg" alt=""></span>@endif
-                                    @if($team->mood_enjoy == 2)<span><img class="level-enjoy" src="images/level/lv2.svg" alt=""></span>@endif
-                                    @if($team->mood_enjoy == 3)<span><img class="level-enjoy" src="images/level/lv3.svg" alt=""></span>@endif
-                                    @if($team->mood_enjoy == 4)<span><img class="level-enjoy" src="images/level/lv4.svg" alt=""></span>@endif
-                                    @if($team->mood_enjoy == 5)<span><img class="level-enjoy" src="images/level/lv5.svg" alt=""></span>@endif
+                                    @if($team->mood_enjoy == 1)<span><img class="level-enjoy" src="storage/images/level/lv1.svg" alt=""></span>@endif
+                                    @if($team->mood_enjoy == 2)<span><img class="level-enjoy" src="storage/images/level/lv2.svg" alt=""></span>@endif
+                                    @if($team->mood_enjoy == 3)<span><img class="level-enjoy" src="storage/images/level/lv3.svg" alt=""></span>@endif
+                                    @if($team->mood_enjoy == 4)<span><img class="level-enjoy" src="storage/images/level/lv4.svg" alt=""></span>@endif
+                                    @if($team->mood_enjoy == 5)<span><img class="level-enjoy" src="storage/images/level/lv5.svg" alt=""></span>@endif
                                 </p>
                                 <p>ガチ度
-                                    @if($team->mood_sanity == 1)<span><img class="level-sanity" src="images/level/lv1.svg" alt=""></span>@endif
-                                    @if($team->mood_sanity == 2)<span><img class="level-sanity" src="images/level/lv2.svg" alt=""></span>@endif
-                                    @if($team->mood_sanity == 3)<span><img class="level-sanity" src="images/level/lv3.svg" alt=""></span>@endif
-                                    @if($team->mood_sanity == 4)<span><img class="level-sanity" src="images/level/lv4.svg" alt=""></span>@endif
-                                    @if($team->mood_sanity == 5)<span><img class="level-sanity" src="images/level/lv5.svg" alt=""></span>@endif
+                                    @if($team->mood_sanity == 1)<span><img class="level-sanity" src="storage/images/level/lv1.svg" alt=""></span>@endif
+                                    @if($team->mood_sanity == 2)<span><img class="level-sanity" src="storage/images/level/lv2.svg" alt=""></span>@endif
+                                    @if($team->mood_sanity == 3)<span><img class="level-sanity" src="storage/images/level/lv3.svg" alt=""></span>@endif
+                                    @if($team->mood_sanity == 4)<span><img class="level-sanity" src="storage/images/level/lv4.svg" alt=""></span>@endif
+                                    @if($team->mood_sanity == 5)<span><img class="level-sanity" src="storage/images/level/lv5.svg" alt=""></span>@endif
                                 </p>
                             </dd>
                         </dl>
