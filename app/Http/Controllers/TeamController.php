@@ -34,7 +34,7 @@ class TeamController extends Controller
         ]);
 
         // ビューで使う配列データの作成
-		$teams = array(
+		$teams = [
 			'name' => $request->input('name'), // チーム名
             'name_kana' => $request->input('name_kana'), // チーム名フリガナ
             'representative' => $request->input('representative'), // 代表者
@@ -50,7 +50,7 @@ class TeamController extends Controller
 			'introduction' => $request->input('introduction'), // チーム紹介
 			'image' => $request->input('image'), // チーム画像
             'url_path' => $request->input('url_path'), // チームURL
-        );
+        ];
 
         // // フォームから画像が送信されてきたら、保存して、$teams->image_path に画像のパスを保存する
         // if (isset($form['image'])) {
@@ -79,38 +79,64 @@ class TeamController extends Controller
         return redirect('team/create');
     }
 
+    public function myteam(Request $request)
+    {
+        // DBからチーム情報をすべて取得する
+        $teams = Team::all();
+
+        // ビューで使う配列データの作成
+		$teams = [
+			'name' => $request->input('name'), // チーム名
+            'name_kana' => $request->input('name_kana'), // チーム名フリガナ
+            'representative' => $request->input('representative'), // 代表者
+            'member_count' => $request->input('member_count'), // メンバー人数
+			'area' => $request->input('area'), // 活動エリア
+			'age_group' => $request->input('age_group'), // 年齢層
+			'category' => $request->input('category'), // カテゴリー
+            'mood_enjoy' => $request->input('mood_enjoy'), // 雰囲気エンジョイ
+			'mood_sanity' => $request->input('mood_sanity'), // 雰囲気ガチ
+			'tag' => $request->input('tag',array('なし')), // タグ
+			'create_year' => $request->input('create_year'), // 結成時期（月）
+			'create_month' => $request->input('create_month'), // 結成時期（年）
+			'introduction' => $request->input('introduction'), // チーム紹介
+			'image' => $request->input('image'), // チーム画像
+            'url_path' => $request->input('url_path'), // チームURL
+        ];
+        
+        return view('team.myteam', compact('teams'));
+    }
+
     public function edit(Request $request)
     {
-        // Team Modelからデータを取得する
-        $teams = Team::find($request->id);
+        // DBからチーム情報をすべて取得する
+        $teams = Team::all();
         
         if (empty($team)) {
             abort(404);    
         }
         
-        return view('team.edit', ['team_form' => $team]);
+        return view('team.edit', compact('teams'));
     }
 
     public function update(Request $request)
     {
-        // Team Modelからデータを取得する
-        $team = Team::find($request->id);
+        // DBからチーム情報をすべて取得する
+        $teams = Team::all();
         
         // 送信されてきたフォームデータを格納する
         $team_form = $request->all();
-        // if (isset($news_form['image'])) {
-        //     $path = $request->file('image')->store('public/image');
-        //     $news->image_path = basename($path);
-        //     unset($news_form['image']);
-        // } elseif (isset($request->remove)) {
-        //     $news->image_path = null;
-        //     unset($news_form['remove']);
-        // }
+
+        //送信されてきた画像格納する
+        if (isset($news_form['image'])) {
+            $path = $request->file('image')->store('public/image');
+            $team->image_path = basename($path);
+            unset($teams_form['image']);
+        } elseif (isset($request->remove)) {
+            $team->image_path = null;
+            unset($news_form['remove']);
+        }
 
         unset($team_form['_token']);
-
-        // 該当するデータを上書きして保存する
-        $team->fill($team_form)->save();
         
         return redirect('team/confirm');
     }

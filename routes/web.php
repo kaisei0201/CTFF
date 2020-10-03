@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('team/create', 'TeamController@add')->name('team.create');
     Route::post('team/create/confirm', 'TeamController@confirm')->name('team.confirm');
     Route::post('team/create/complete', 'TeamController@complete')->name('team.complete');
+    Route::get('team/create/myteam', 'TeamController@myteam')->name('team.myteam');
     Route::get('team/edit', 'TeamController@edit');
     Route::get('team/delete', 'TeamController@delete');
     Route::get('team/update', 'TeamController@update');

@@ -2,7 +2,6 @@
 
 @section('content')
 
-<h1>確認画面</h1>
 
 <form action="{{ action('TeamController@update') }}" method="post" enctype="multipart/form-data">
     @csrf
@@ -44,8 +43,8 @@
 
         <h4>{{ $url_path }}</h4>
         
-        <input type="hidden" name="id" value="{{ $team_form->id }}">
-        {{ csrf_field() }}
+        <input type="hidden" name="id" value="#">
+        
         <input type="submit" class="btn btn-primary" value="更新">
 </form>
 @endsection
